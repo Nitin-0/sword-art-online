@@ -3,169 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="1.png" type="image/x-icon">
+    <link href="style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
     <title>Sword Art Online</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body, html {
-            height: 100%;
-            font-size: 62.5%;
-            color: #fff;
-            background-color: #000;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-
-        .header-top__bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 95px;
-            background-image: url('top.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-           filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.5));
-        }
-
-        .header {
-            background-image: url('top_pc.png');
-            height: 95px;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
-        }
-
-        .navbar {
-            display: flex;
-        }
-
-        .navbar ul {
-            display: flex;
-            gap: 20px;
-        }
-
-        .navbar li {
-            list-style: none;
-            text-align: center;
-            position: relative;
-        }
-
-        .navbar li a {
-            display: block;
-            font-size: 1.8rem; /* Use rem for scaling */
-            text-decoration: none;
-            color: aliceblue;
-        }
-
-        .navbar li ::after{
-            content: "";
-            display: block;
-            width: 25px;
-            height: 30px; 
-            background-image: url('icon.png');
-            background-size: cover; 
-            margin: 0 auto; 
-            margin-top: 4px;
-
-        }
-        /* .navbarafter{
-            background-image: url("icon.png");
-            height: 30px;
-            width: 25px;
-        } */
-
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: calc(100% - 140px); /* Full height minus header height */
-            color: #fff;
-            font-weight: 700;
-            font-size: 5rem; /* Use rem for scaling */
-        }
-
-        .imagecontainer {
-            position: relative;
-            height: calc(100% - 140px);
-            overflow: hidden; /* Ensure content does not overflow */
-        }
-
-        .mv-bg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transform: translate(-50%, -50%); 
-            z-index: 0
-        }
-
-        .text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: #fff;
-        }
-        
-        footer{
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-image: url("bottom_pc.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            height: 60px;
-            width: 100%;
-            filter: drop-shadow(0 0 20px rgba(255, 255, 255, .5))
-        }
-    </style>
 </head>
 <body>
     <div class="header-top__bg"></div>
     <div class="header">
         <div class="navbar">
             <ul>
-               <li><a href="#">Home</a></li>
-                <!-- <div class="navbarafter"><li><a href="#">Home</a>
-                </li></div>
-                <div class="navbarafter"><li><a href="#">Home</a>
-                </li></div>
-                <div class="navbarafter"><li><a href="#">Home</a>
-                </li></div>
-                <div class="navbarafter"><li><a href="#">Home</a>
-                </li></div> -->
-                <li><a href="#">Characters</a></li>
-                <li><a href="#">Movies</a></li>
-                <li><a href="#">About Us</a></li>
+               <li><a href="#Home" class="active">Home</a></li>
+                <li><a href="#character-card">Characters</a></li>
+                <li><a href="#movie">Movies</a></li>
+                <li><a href="#About Us">About Us</a></li>
             </ul>
         </div>
     </div>
-    <div class="imagecontainer">
+    <div class="imagecontainer" id="Home">
         <video style="object-fit: cover;" class="mv-bg" id="video" webkit-playsinline playsinline muted autoplay loop>
-            <source src="saovs_movie.mp4" type="video/mp4">
+            <source src="https://saovs-web-contents.s3.ap-northeast-1.amazonaws.com/movie/saovs_movie.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <div class="container" style="color: #000;">
+        <div class="container">
             <div class="text">Sword Art Online</div>
         </div>
     </div>
-   <footer>
-   </footer>
-   <p>Made By Nitin</p>
+    <div class="add-character-container" id="character-card">
+        <div class="cards-heading">
+            <h1>Characters</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide character-card">
+                    <img src="Kirito.png" alt="Kirito">
+                    <h3>Kirito</h3>
+                    <p>The Black Swordsman</p>
+                </div>
+                <div class="swiper-slide character-card">
+                    <img src="Asuna.png"  height="600px" alt="Asuna">
+                    <h3>Asuna</h3>
+                    <p>The Flash</p>
+                </div>
+                <div class="swiper-slide character-card">
+                    <img src="Sinon-0.webp" alt="Sinon">
+                    <h3>Sinon</h3>
+                    <p>The Sniper</p>
+                </div>
+                <div class="swiper-slide character-card">
+                    <img src="Sinon-0.webp" alt="Sinon">
+                    <h3>Sinon</h3>
+                    <p>The Sniper</p>
+                </div>
+                <div class="swiper-slide character-card">
+                    <img src="Sinon-0.webp" alt="Sinon">
+                    <h3>Sinon</h3>
+                    <p>The Sniper</p>
+                </div>
+                <div class="swiper-slide character-card">
+                    <img src="Sinon-0.webp" alt="Sinon">
+                    <h3>Sinon</h3>
+                    <p>The Sniper</p>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            loop: true,
+        });
+    </script>
+    <script src="script.js"></script>
+    <footer>
+    </footer>
+    <p>Made By Nitin</p>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </body>
 </html>
